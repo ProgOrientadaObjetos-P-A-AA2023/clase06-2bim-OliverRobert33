@@ -44,12 +44,11 @@ public class Enlace {
         try{  
             establecerConexion();
             Statement statement = obtenerConexion().createStatement();
-            String data = String.format("INSERT INTO autos (placa,"
-                    + "valor_matricula) "
-                    + "values ('%s', %s)", 
+            String data = String.format(""
+                    + "INSERT INTO autos (placa, valor_matricula) values ('%s', %s)", 
                     auto.obtenerPlaca(), 
                     auto.obtenerValorMatricula());
-            System.out.println(data);
+//            System.out.println(data);
             statement.executeUpdate(data);
             obtenerConexion().close();
         } catch (SQLException e) {  
